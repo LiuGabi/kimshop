@@ -1,0 +1,20 @@
+<view class="container">
+	<!-- Banner -->
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}" class="banner" style='height:{{bannerHeight}}px'>
+		<block wx:for="{{imgUrls}}" wx:key="*this">
+			<swiper-item>
+				<image src="{{item}}" mode="{{'widthFix'}}" bindload='imageLoad'/>
+			</swiper-item>
+		</block>
+	</swiper>
+
+	<!-- List -->
+	<text class="big-title">菜谱</text>
+	<block wx:for="{{list}}" wx:key="title">
+		<view class="item">
+			<image src="{{item.img}}" mode="{{'widthFix'}}"/>
+			<text class="title">{{item.title}}</text>
+			<text class="content">{{item.content}}</text>
+		</view>
+	</block>
+</view>
